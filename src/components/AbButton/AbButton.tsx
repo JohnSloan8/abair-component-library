@@ -1,6 +1,6 @@
 import React from "react";
 import "./AbButton.css";
-
+import ThemeProvider from "../../theme/Provider";
 export interface AbButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -38,16 +38,18 @@ const AbButton = ({
     ? "storybook-button--primary"
     : "storybook-button--secondary";
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={backgroundColor ? { backgroundColor } : {}}
-      onClick={onClick}
-    >
-      {label}
-    </button>
+    <ThemeProvider>
+      <button
+        type="button"
+        className={["storybook-button", `storybook-button--${size}`, mode].join(
+          " "
+        )}
+        style={backgroundColor ? { backgroundColor } : {}}
+        onClick={onClick}
+      >
+        {label}
+      </button>
+    </ThemeProvider>
   );
 };
 
