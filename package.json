@@ -1,0 +1,43 @@
+{
+  "name": "abair-component-library",
+  "version": "1.0.1",
+  "description": "components for the Abair project",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "author": "John Sloan",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.17",
+    "babel-loader": "^8.2.5",
+    "postcss": "^8.4.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^2.78.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.33.0",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build": "rollup -c"
+  }
+}
