@@ -31,3 +31,10 @@ App.args = {
   description: "Speak in Irish and see your words as text",
   variation: "app",
 };
+
+export const SCApp = Template.bind({});
+SCApp.args = {
+  title: "Speech Recognition",
+  description: "Speak in Irish and see your words as text",
+  variation: "sCapp",
+};

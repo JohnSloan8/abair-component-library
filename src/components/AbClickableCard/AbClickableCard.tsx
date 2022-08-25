@@ -8,15 +8,7 @@ import styles from "./styles";
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
 
-export interface AbClickableCardProps {
-  image?: string;
-  title?: string;
-  description?: string;
-  handleClickEvent?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
-  variation: "main" | "app";
-}
+import { AbClickableCardProps } from "./types";
 
 const AbClickableCard = ({
   image,

@@ -64,7 +64,7 @@ const themes: Record<Themes, ThemeOptions> = {
     },
   }),
 
-  scéalaí: deepmerge(sharedTheme, {
+  scéalaí: deepmerge(fullSharedTheme, {
     palette: {
       mode: "scéalaí",
       background: {

@@ -18,7 +18,7 @@ interface AbClickableCardProps {
   handleClickEvent?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
-  variation: "main" | "app";
+  variation: "main" | "app" | "sCapp";
 }
 
 export type { CardStyles, AbClickableCardProps };
