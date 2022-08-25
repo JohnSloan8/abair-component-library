@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 
 import styles from "./styles";
 import React from "react";
+import { ThemeProvider } from "@emotion/react";
 
 export interface AbClickableCardProps {
   image?: string;
@@ -27,30 +28,37 @@ const AbClickableCard = ({
   variation,
 }: AbClickableCardProps) => {
   const style = styles[variation];
+  console.log("style.theme:", style.theme);
   return (
-    <Card sx={{ minWidth: style.minWidth, maxWidth: style.maxWidth }}>
-      <CardActionArea onClick={handleClickEvent}>
-        <CardContent
-          sx={{ bottom: style.bottom, position: "absolute", p: style.padding }}
-        >
-          <Typography
-            gutterBottom
-            variant={style.titleVariant}
-            color={style.color}
+    <ThemeProvider theme={style.theme}>
+      <Card sx={{ minWidth: style.minWidth, maxWidth: style.maxWidth }}>
+        <CardActionArea onClick={handleClickEvent}>
+          <CardContent
+            sx={{
+              bottom: style.bottom,
+              position: "absolute",
+              p: style.padding,
+            }}
           >
-            {title}
-          </Typography>
-          <Typography variant="body2" color={style.color}>
-            {description}
-          </Typography>
-        </CardContent>
-        <CardMedia
-          component="img"
-          image={image ? image : style.image}
-          alt="fallback image"
-        />
-      </CardActionArea>
-    </Card>
+            <Typography
+              gutterBottom
+              variant={style.titleVariant}
+              color={style.color}
+            >
+              {title}
+            </Typography>
+            <Typography variant="body2" color={style.color}>
+              {description}
+            </Typography>
+          </CardContent>
+          <CardMedia
+            component="img"
+            image={image ? image : style.image}
+            alt="fallback image"
+          />
+        </CardActionArea>
+      </Card>
+    </ThemeProvider>
   );
 };
 

@@ -1,8 +1,9 @@
 import { blue, green, red } from "@mui/material/colors";
-import { ThemeOptions } from "@mui/material/styles";
+import { createTheme, ThemeOptions } from "@mui/material/styles";
 import { deepmerge } from "@mui/utils";
-
 import { Themes } from "./types";
+
+const originalTheme = createTheme({});
 
 const sharedTheme = {
   palette: {
@@ -38,8 +39,10 @@ const sharedTheme = {
   },
 } as ThemeOptions; // the reason for this casting is deepmerge return type
 
+const fullSharedTheme = deepmerge(originalTheme, sharedTheme);
+
 const themes: Record<Themes, ThemeOptions> = {
-  abair: deepmerge(sharedTheme, {
+  abair: deepmerge(fullSharedTheme, {
     palette: {
       mode: "abair",
       background: {

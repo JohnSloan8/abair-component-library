@@ -8,7 +8,7 @@ interface CardStyles {
   minWidth: number;
   maxWidth: number;
   image: string;
-  theme: string;
+  theme: Themes;
 }
 
 interface AbClickableCardProps {
@@ -19,7 +19,6 @@ interface AbClickableCardProps {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
   variation: "main" | "app";
-  theme: Themes;
 }
 
 export type { CardStyles, AbClickableCardProps };

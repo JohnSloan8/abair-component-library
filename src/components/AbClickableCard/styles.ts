@@ -1,3 +1,5 @@
+import themes from "../../theme/themes";
+import { Themes } from "../../theme/types";
 import { CardStyles } from "./types";
 
 const styles: { [name: string]: CardStyles } = {
@@ -9,6 +11,7 @@ const styles: { [name: string]: CardStyles } = {
     minWidth: 280,
     maxWidth: 280,
     image: "https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png",
+    theme: themes.abair as Themes,
   },
   app: {
     titleVariant: "h6",
@@ -18,6 +21,7 @@ const styles: { [name: string]: CardStyles } = {
     minWidth: 164,
     maxWidth: 164,
     image: "https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png",
+    theme: themes.abair as Themes,
   },
 };
 

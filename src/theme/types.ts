@@ -1,8 +1,7 @@
-// enum Themes {
-//   ABAIR = "abair",
-//   SCÉALAÍ = "scéalaí",
-// }
-type Themes = "dark" | "light";
+enum Themes {
+  ABAIR = "abair",
+  SCÉALAÍ = "scéalaí",
+}
 
 type CustomThemeProviderProps = {
   children: JSX.Element;
