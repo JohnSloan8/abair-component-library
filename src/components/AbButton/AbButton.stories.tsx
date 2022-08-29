@@ -1,7 +1,8 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import AbButton, { AbButtonProps } from "./AbButton";
+import AbButton from "./AbButton";
+import { AbButtonProps } from "./types";
 
 export default {
   title: "Components/AbButton",
@@ -11,12 +12,13 @@ export default {
   },
 } as Meta;
 
-// Create a master template for mapping args to render the Button component
 const Template: Story<AbButtonProps> = (args) => <AbButton {...args} />;
 
-// Reuse that template for creating different stories
-export const Primary = Template.bind({});
-Primary.args = { label: "Primary 😃", size: "large" };
+export const Selected = Template.bind({});
+Selected.args = { label: "Róisín", variant: "contained", disabled: false };
 
-export const Secondary = Template.bind({});
-Secondary.args = { ...Primary.args, primary: false, label: "Secondary 😇" };
+export const Selectable = Template.bind({});
+Selectable.args = { label: "Róisín", variant: "outlined", disabled: false };
+
+export const Unselectable = Template.bind({});
+Unselectable.args = { label: "Róisín", variant: "text", disabled: true };

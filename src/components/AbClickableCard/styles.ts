@@ -1,8 +1,8 @@
 import themes from "../../theme/themes";
 import { Themes } from "../../theme/types";
-import { CardStyles } from "./types";
+import { AbClickableCardStyles } from "./types";
 
-const styles: { [name: string]: CardStyles } = {
+const styles: { [name: string]: AbClickableCardStyles } = {
   main: {
     titleVariant: "h6",
     color: "primary",

@@ -1,54 +1,25 @@
 import React from "react";
-import "./AbButton.css";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 import ThemeProvider from "../../theme/Provider";
-export interface AbButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
+import { AbButtonProps } from "./types";
+import styles from "./styles";
 
-/**
- * Primary UI component for user interaction
- */
 const AbButton = ({
-  primary = true,
-  backgroundColor,
-  size = "medium",
   onClick,
   label,
+  variant,
+  disabled,
+  variation,
 }: AbButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+  const style = styles[variation];
   return (
     <ThemeProvider>
-      <button
-        type="button"
-        className={["storybook-button", `storybook-button--${size}`, mode].join(
-          " "
-        )}
-        style={backgroundColor ? { backgroundColor } : {}}
-        onClick={onClick}
-      >
-        {label}
-      </button>
+      <Stack spacing={2} direction="row">
+        <Button variant={variant} disabled={disabled} onClick={onClick}>
+          {label}
+        </Button>
+      </Stack>
     </ThemeProvider>
   );
 };

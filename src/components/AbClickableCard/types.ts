@@ -1,6 +1,6 @@
 import { Themes } from "../../theme/types";
 
-interface CardStyles {
+interface AbClickableCardStyles {
   titleVariant: "h5" | "h6";
   color: string;
   padding: number;
@@ -21,4 +21,4 @@ interface AbClickableCardProps {
   variation: "main" | "app" | "sCapp";
 }
 
-export type { CardStyles, AbClickableCardProps };
+export type { AbClickableCardStyles, AbClickableCardProps };
