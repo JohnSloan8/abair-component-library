@@ -1,7 +1,7 @@
 interface AbRadioGroupProps {
   name: string;
-  getter: string;
-  handleChangeEvent?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  handleChangeEvent?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   options: string[];
   variation: "large" | "small";
 }

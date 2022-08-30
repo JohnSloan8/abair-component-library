@@ -7,21 +7,17 @@ import Typography from "@mui/material/Typography";
 import styles from "./styles";
 import { useState } from "react";
 import { AbRadioGroupProps } from "./types";
-
+import React from "react";
 const AbRadioGroup = ({
   name = "synthesis",
-  getter = "male",
-  handleChangeEvent = (e) => {
-    console.log("setter fired");
+  handleChangeEvent = () => {
+    console.log("all");
   },
-  options = ["male", "female"],
+  options = ["all", "male", "female"],
   variation = "large",
 }: AbRadioGroupProps) => {
+  const [val, setVal] = useState("all");
   const style = styles[variation];
-  const [val, setVal] = useState(getter);
-  handleChangeEvent = (e) => {
-    setVal(e.target.value);
-  };
   return (
     <FormControl>
       <FormLabel
@@ -34,10 +30,7 @@ const AbRadioGroup = ({
         row
         aria-labelledby="demo-row-radio-buttons-group-label"
         name="row-radio-buttons-group"
-        value={val}
-        onChange={(e) => {
-          handleChangeEvent(e);
-        }}
+        onChange={handleChangeEvent}
       >
         {options.map((o: string, i: number) => (
           <FormControlLabel

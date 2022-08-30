@@ -1,20 +1,27 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import ThemeProvider from "../../theme/Provider";
+import { ThemeProvider } from "@emotion/react";
 import { AbButtonProps } from "./types";
 import styles from "./styles";
 
 const AbButton = ({
   onClick,
   label,
-  variant,
+  selected,
   disabled,
-  variation,
+  variation = "voice",
 }: AbButtonProps) => {
   const style = styles[variation];
+
   return (
-    <ThemeProvider>
-      <Button variant={variant} disabled={disabled} onClick={onClick}>
+    <ThemeProvider theme={style.theme}>
+      <Button
+        variant={selected ? "contained" : "outlined"}
+        disabled={disabled}
+        color="secondary"
+        onClick={onClick}
+        sx={{ borderColor: !selected && disabled ? "rgba(0,0,0,0)" : null }}
+      >
         {label}
       </Button>
     </ThemeProvider>
