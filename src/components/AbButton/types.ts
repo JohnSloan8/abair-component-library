@@ -1,7 +1,7 @@
 import { Themes } from "../../theme/types";
 
 interface AbButtonProps {
-  disabled: boolean;
+  disabled?: boolean;
   label: string;
   selected: boolean;
   variation: "voice";
