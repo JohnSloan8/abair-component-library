@@ -3,6 +3,7 @@ import { Themes } from "../../theme/types";
 interface AbButtonProps {
   disabled?: boolean;
   label: string;
+  color: string;
   selected: boolean;
   variation: "voice";
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

@@ -5,7 +5,9 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
-  "author": "John Sloan",
+  "author": {
+    "name": "John Sloan"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -21,6 +23,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.17",
     "babel-loader": "^8.2.5",
+    "chromatic": "^6.9.0",
     "postcss": "^8.4.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -42,6 +45,9 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c"
-  }
+    "build": "rollup -c",
+    "chromatic": "npx chromatic --project-token=f1d6bd780429"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "abair-component-library@1.0.25"
 }

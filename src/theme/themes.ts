@@ -53,7 +53,7 @@ const themes: Record<Themes, ThemeOptions> = {
         wafer: green[50],
         light: green[100],
         main: green[600],
-        dark: green[800],
+        dark: green[900],
       },
       secondary: {
         wafer: blue[50],
