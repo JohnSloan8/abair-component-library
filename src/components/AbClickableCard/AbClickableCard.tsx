@@ -20,7 +20,6 @@ const AbClickableCard = ({
   variation,
 }: AbClickableCardProps) => {
   const style = styles[variation];
-  console.log("style.theme:", style.theme);
   return (
     <ThemeProvider theme={style.theme}>
       <Card sx={{ minWidth: style.minWidth, maxWidth: style.maxWidth }}>
